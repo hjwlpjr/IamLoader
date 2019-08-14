@@ -11,6 +11,5 @@ import Foundation
 extension IamLoaderRequest {
     public enum DataType: Int {
         case json = 0
-        case xml = 1
     }
 }

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct ImageCache {
+    let image: UIImage
+    var usedCount: Int
+}

@@ -13,7 +13,6 @@ public enum RequestError: Error {
     case errFetchData
     case errHttpResponse
     case noData
-    case serverError
     case failDecode
 }
 
@@ -28,8 +27,6 @@ extension RequestError: LocalizedError {
             return "Fail to get response from server"
         case .noData:
             return "No data from server"
-        case .serverError:
-            return "Internal server error"
         case .failDecode:
             return "Fail to decode model"
         }

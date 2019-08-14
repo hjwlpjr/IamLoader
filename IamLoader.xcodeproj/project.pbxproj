@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B28D3FD7A88AA66B0BB7FF2 /* Pods_IamLoaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91946417B2ECFC78F3ADA1EA /* Pods_IamLoaderTests.framework */; };
 		A11B578522FF179A00EE20C1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11B578422FF179A00EE20C1 /* Image.swift */; };
 		A1249C5C22FDBE840025F480 /* IamLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1249C5222FDBE840025F480 /* IamLoader.framework */; };
 		A1249C6122FDBE840025F480 /* IamLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1249C6022FDBE840025F480 /* IamLoaderTests.swift */; };
 		A1249C6322FDBE840025F480 /* IamLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = A1249C5522FDBE840025F480 /* IamLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1249C6E22FDC5070025F480 /* IamLoaderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1249C6D22FDC5070025F480 /* IamLoaderImage.swift */; };
 		A17B52FC22FF9AF50011A35D /* IamLoaderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B52FB22FF9AF50011A35D /* IamLoaderRequest.swift */; };
-		A17B52FF22FF9CB80011A35D /* IamLoaderImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B52FE22FF9CB80011A35D /* IamLoaderImageController.swift */; };
 		A17B530122FFA3970011A35D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B530022FFA3970011A35D /* Request.swift */; };
 		A17B530422FFA6160011A35D /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B530322FFA6160011A35D /* Base.swift */; };
 		A17B530822FFA8C00011A35D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B530722FFA8C00011A35D /* Error.swift */; };
+		A17B531322FFDE790011A35D /* IamLoaderDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B531222FFDE790011A35D /* IamLoaderDownload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8472C462A83130CF96CDC6C1 /* Pods_IamLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IamLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91946417B2ECFC78F3ADA1EA /* Pods_IamLoaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IamLoaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11B578422FF179A00EE20C1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		A1249C5222FDBE840025F480 /* IamLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IamLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1249C5522FDBE840025F480 /* IamLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IamLoader.h; sourceTree = "<group>"; };
@@ -39,10 +42,10 @@
 		A1249C6222FDBE840025F480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1249C6D22FDC5070025F480 /* IamLoaderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamLoaderImage.swift; sourceTree = "<group>"; };
 		A17B52FB22FF9AF50011A35D /* IamLoaderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamLoaderRequest.swift; sourceTree = "<group>"; };
-		A17B52FE22FF9CB80011A35D /* IamLoaderImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamLoaderImageController.swift; sourceTree = "<group>"; };
 		A17B530022FFA3970011A35D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A17B530322FFA6160011A35D /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		A17B530722FFA8C00011A35D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		A17B531222FFDE790011A35D /* IamLoaderDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamLoaderDownload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +61,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1249C5C22FDBE840025F480 /* IamLoader.framework in Frameworks */,
+				0B28D3FD7A88AA66B0BB7FF2 /* Pods_IamLoaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87017AF8AC41DED52CB35EFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8472C462A83130CF96CDC6C1 /* Pods_IamLoader.framework */,
+				91946417B2ECFC78F3ADA1EA /* Pods_IamLoaderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A11B578322FF178100EE20C1 /* Helpers+Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +93,7 @@
 				A1249C5422FDBE840025F480 /* IamLoader */,
 				A1249C5F22FDBE840025F480 /* IamLoaderTests */,
 				A1249C5322FDBE840025F480 /* Products */,
+				87017AF8AC41DED52CB35EFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,9 +109,8 @@
 		A1249C5422FDBE840025F480 /* IamLoader */ = {
 			isa = PBXGroup;
 			children = (
+				A1B673812301B01900E238F7 /* Components */,
 				A17B530222FFA6090011A35D /* Models */,
-				A1249C6C22FDC4D00025F480 /* Views */,
-				A17B52FD22FF9C950011A35D /* Controllers */,
 				A17B52FA22FF9A6C0011A35D /* Services */,
 				A11B578322FF178100EE20C1 /* Helpers+Extensions */,
 				A1249C5622FDBE840025F480 /* Info.plist */,
@@ -115,28 +128,13 @@
 			path = IamLoaderTests;
 			sourceTree = "<group>";
 		};
-		A1249C6C22FDC4D00025F480 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A1249C6D22FDC5070025F480 /* IamLoaderImage.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		A17B52FA22FF9A6C0011A35D /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				A17B52FB22FF9AF50011A35D /* IamLoaderRequest.swift */,
+				A17B531222FFDE790011A35D /* IamLoaderDownload.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		A17B52FD22FF9C950011A35D /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A17B52FE22FF9CB80011A35D /* IamLoaderImageController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A17B530222FFA6090011A35D /* Models */ = {
@@ -145,6 +143,14 @@
 				A17B530322FFA6160011A35D /* Base.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B673812301B01900E238F7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1249C6D22FDC5070025F480 /* IamLoaderImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1249C6622FDBE840025F480 /* Build configuration list for PBXNativeTarget "IamLoader" */;
 			buildPhases = (
+				AFC40037190204EC936822DF /* [CP] Check Pods Manifest.lock */,
 				A1249C4D22FDBE840025F480 /* Headers */,
 				A1249C4E22FDBE840025F480 /* Sources */,
 				A1249C4F22FDBE840025F480 /* Frameworks */,
 				A1249C5022FDBE840025F480 /* Resources */,
+				1AAA8B5897FF421DECBF024A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1249C6922FDBE840025F480 /* Build configuration list for PBXNativeTarget "IamLoaderTests" */;
 			buildPhases = (
+				0B2605019125E8E018D3E21A /* [CP] Check Pods Manifest.lock */,
 				A1249C5722FDBE840025F480 /* Sources */,
 				A1249C5822FDBE840025F480 /* Frameworks */,
 				A1249C5922FDBE840025F480 /* Resources */,
+				B2CB949D1C087FEB7B4B26AB /* [CP] Embed Pods Frameworks */,
+				7B0D76BABB6153D5275DA4EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +262,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B2605019125E8E018D3E21A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IamLoaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AAA8B5897FF421DECBF024A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		7B0D76BABB6153D5275DA4EF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IamLoaderTests/Pods-IamLoaderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC40037190204EC936822DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		B2CB949D1C087FEB7B4B26AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IamLoaderTests/Pods-IamLoaderTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/XMLParsing/XMLParsing.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLParsing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IamLoaderTests/Pods-IamLoaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1249C4E22FDBE840025F480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17B531322FFDE790011A35D /* IamLoaderDownload.swift in Sources */,
 				A17B530422FFA6160011A35D /* Base.swift in Sources */,
-				A17B52FF22FF9CB80011A35D /* IamLoaderImageController.swift in Sources */,
 				A1249C6E22FDC5070025F480 /* IamLoaderImage.swift in Sources */,
 				A17B530122FFA3970011A35D /* Request.swift in Sources */,
 				A11B578522FF179A00EE20C1 /* Image.swift in Sources */,

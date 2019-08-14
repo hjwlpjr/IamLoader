@@ -43,14 +43,13 @@ public class IamLoaderRequest {
             }
             
             do {
-                let decodedModel = try JSONDecoder().decode(T.self, from: data)
-                if httpResponse.statusCode >= 400 {
-                    completion(.failure(.serverError))
-                } else {
-                    completion(.success(decodedModel))
+                switch type {
+                    case .json:
+                        let decodedModel = try JSONDecoder().decode(T.self, from: data)
+                        completion(.success(decodedModel))
                 }
             } catch {
-                print(error)
+                completion(.failure(.failDecode))
             }
             
         }).resume()
