@@ -58,30 +58,31 @@ extension IamLoaderImage {
         
         guard let url = URL(string: urlString) else { return }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        if url.absoluteString != self.lastURLUsedToLoadImage {
+            return
+        }
         
-        URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) in
+        let downloader = IamLoaderDownload()
+        downloader.downloadData(apiUrl: urlString) { (res: Result<Data, RequestError>) in
             
-            if url.absoluteString != self.lastURLUsedToLoadImage {
+            switch res {
+            case .success(let res):
+                let downloadedImage = UIImage(data: res)
+                
+                // do the removal least used cache if cache size already max
+                if imageCaches.count >= cacheSize {
+                    self.removeLeastUsedCache()
+                }
+                
+                imageCaches[url.absoluteString] = ImageCache(image: downloadedImage ?? UIImage(), usedCount: 0)
+                
+                DispatchQueue.main.async {
+                    self.image = downloadedImage
+                }
+            case .failure(_):
                 return
             }
-            
-            guard let imageData = data else { return }
-            
-            let downloadedImage = UIImage(data: imageData)
-            
-            // do the removal least used cache if cache size already max
-            if imageCaches.count >= cacheSize {
-                self.removeLeastUsedCache()
-            }
-            
-            imageCaches[url.absoluteString] = ImageCache(image: downloadedImage ?? UIImage(), usedCount: 0)
-            
-            DispatchQueue.main.async {
-                self.image = downloadedImage
-            }
-        }).resume()
+        }
     }
     
     // this will remove least used cache

@@ -8,47 +8,29 @@
 
 import Foundation
 
-public class IamLoaderDownload: NSObject {
+public class IamLoaderDownload {
     
-    public var downloadedUrl: URL?
-    
-    public override init() {
-        super.init()
+    public init() {
     }
     
-    public func downloadPDF(url: String, completion: @escaping(Bool) -> ()) {
-        guard let url = URL(string: url) else { return }
+    public func downloadData(apiUrl: String, completion: @escaping(Result<Data, RequestError>) -> ()) {
         
-        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+        guard let url = URL(string: apiUrl) else {
+            completion(.failure(.badUrl))
+            return
+        }
         
-        urlSession.downloadTask(with: url) { (url, res, err) in
-            if let err = err {
-                print("there is err: " + err.localizedDescription)
-                completion(false)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) in
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
             }
             
-            completion(true)
-        }
+            completion(.success(data))
+        }).resume()
     }
-}
-
-extension IamLoaderDownload: URLSessionDownloadDelegate {
-    
-    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("downloadLocation:", location)
-        // create destination URL with the original pdf name
-        guard let url = downloadTask.originalRequest?.url else { return }
-        let documentsPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let destinationURL = documentsPath.appendingPathComponent(url.lastPathComponent)
-        // delete original copy
-        try? FileManager.default.removeItem(at: destinationURL)
-        // copy from temp to Document
-        do {
-            try FileManager.default.copyItem(at: location, to: destinationURL)
-            downloadedUrl = destinationURL
-        } catch let error {
-            print("Copy Error: \(error.localizedDescription)")
-        }
-    }
-    
 }
