@@ -1,0 +1,11 @@
+framework module IamLoader {
+  umbrella header "IamLoader.h"
+
+  export *
+  module * { export * }
+}
+
+module IamLoader.Swift {
+    header "IamLoader-Swift.h"
+    requires objc
+}

@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "IamLoader using native UIImage and handle cache for images and using native urlsession and decodeable protocol under the hood to fetch JSON data"
 
-  s.homepage     = "http://EXAMPLE/IamLoader"
+  s.homepage     = "https://github.com/hjwlpjr/IamLoader"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "hjwlpjr" => "huang.zinwei@gmail.com" }
+  s.author             = "huang.zinwei@gmail.com"
   # Or just: s.author    = "andylpjr"
   # s.authors            = { "andylpjr" => "andy.wijaya190990@gmail.com" }
   # s.social_media_url   = "http://twitter.com/andylpjr"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/hjwlpjr/IamLoader", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/hjwlpjr/IamLoader.git", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
