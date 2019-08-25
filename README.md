@@ -1,6 +1,21 @@
 # IamLoader
 A lightweight swift library for loading images and JSON
 
+### CocoaPods
+Add the pod to your Podfile:
+```ruby
+pod 'IamLoader', :git => 'https://github.com/hjwlpjr/IamLoader.git'
+```
+
+And then run:
+```ruby
+pod install
+```
+After installing the cocoapod into your project import Lottie with 
+```swift
+import IamLoader
+```
+
 # How to use IamLoader Image
 
 <img align="right" src="https://github.com/hjwlpjr/IamLoader/blob/master/rounded.png" width="360"/>
