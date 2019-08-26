@@ -11,7 +11,7 @@ And then run:
 ```ruby
 pod install
 ```
-After installing the cocoapod into your project import Lottie with 
+After installing the cocoapod into your project import IamLoader with 
 ```swift
 import IamLoader
 ```
