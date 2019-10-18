@@ -101,4 +101,51 @@ public class IamLoaderRequest {
             
         }).resume()
     }
+    
+    func postData<T: Codable, U: Decodable>(apiUrl: String, body: T, completion: @escaping (Result<U, RequestError>) -> ()) {
+        
+        let apiUrl = apiUrl
+        
+        do {
+            let payload = try JSONEncoder().encode(body)
+            guard let url = URL(string: apiUrl) else {
+                completion(.failure(.badUrl))
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = payload
+            request.addValue("application/json", forHTTPHeaderField: "Content-type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) in
+                
+                if let error = error {
+                    completion(.failure(.errFetchData))
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completion(.failure(.errHttpResponse))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(.noData))
+                    return
+                }
+                
+                do {
+                    let decodedModel = try JSONDecoder().decode(U.self, from: data)
+                    completion(.success(decodedModel))
+                } catch {
+                    completion(.failure(.failDecode))
+                }
+                
+            }).resume()
+        } catch {
+            completion(.failure(.badUrl))
+        }
+    }
 }
